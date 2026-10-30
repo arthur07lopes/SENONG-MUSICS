@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(39, 39, 104);
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.teste,
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.teste {
+    padding: 30px 5px;
+    height: auto;
+}
+
+.nav {
+    padding: 30px;
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer; 
+}
+
+img {
+    width: 60px;
+    height: auto;
+}
