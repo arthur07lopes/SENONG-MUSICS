@@ -30,6 +30,7 @@ body{
 
 button{
     cursor:pointer;
+    margin-top: 10px;
 }
 
 .janela_login{
@@ -41,6 +42,7 @@ button{
     width: 250px;
     display: flex;
     flex-direction:column;
+    gap: 10px;
     border-radius: 10px;
     color: white;
 }
