@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Loja de discos Senong</title>
+    <script src="script.login.js" defer></script>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <img src="senong_logo sem nome.png" class="logo_img" href="logo senong">    
+    <header>
+        <h1 id="texto_de_cima">faça seu login</h1>
+
+    </header>
+    <main>
+        <form id="login-form" class="janela_login" action="#" method="post">
+            <label for="username">Nome de usuário ou e-mail:</label>
+            <input type="text" id="username" name="username" required>
+
+            <br>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+
+            <!--Mostrar / ocultar senha-->
+            <label for="show-password">Mostrar senha</label>
+            <input type="checkbox" id="show-password" name="show-password">
+
+            <br>
+
+            <label for="remember-me">Lembrar de mim</label>
+            <input type="checkbox" id="remember-me" name="remember-me">
+
+            <br>
+            <br>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+</body>
+</html>
