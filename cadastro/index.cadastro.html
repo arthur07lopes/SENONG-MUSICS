@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de cadastro da loja de disco PROJECT-X">
+    <title>Criar conta | Loja de discos SENONG</title>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+    <header class="site-header">
+        <div class="container head-inner">
+            <a class="brand" href="index.cadastro.html" aria-label="SENONG Página de cadastro">
+                <span class="brand-mark" aria-hidden="true">SNG</span>
+                <span class="brand-name">SENONG</span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../pagina%20inicial/index.html">Discos & Músicas</a></li>
+                    <li><a href="../index.login.html">Página de login</a></li>  
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="conteudo-principal" class="auth-layout container" tabindex="-1">
+        <section class="auth-intro" aria-labelledby="titulo-principal">
+            <p class="eyebrow">SUA PRÓXIMA FAIXA COMEÇA AQUI</p>
+            <h1 id="titulo-principal">Crie sua conta</h1>
+            <p class="intro-copy">Organize suas descobertas musicais e faça parte da loja SENONG.</p>
+            
+            <ul class="benefits" aria-label="Vantagens da conta">
+                <li>Reúna suas descobertas musicais.</li>
+                <li>Explore a loja de discos com sua conta.</li>
+                <li>Tenha seus dados de acesso em um só lugar.</li>
+            </ul>
+        </section>
+
+        <section class="auth-card" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Dados da sua conta</h2>
+            <p id="instrucoes-formulario" class="form-intro">
+                Preencha os campos obrigatórios. Para gravar os dados em cadastro.json,
+                mantenha o servidor local de cadastro ligado.
+            </p>
+
+            <form id="form-cadastro" method="post" aria-describedby="instrucoes-formulario">
+                <div class="form-field">
+                    <label for="nome">Nome completo</label>
+                    <input id="nome" name="nome" type="text" autocomplete="name" minlength="3" required aria-describedby="nome-ajuda">
+                    <p class="field-help" id="nome-ajuda">
+                        Digite seu nome como deseja identificar sua conta.
+                    </p>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-ajuda">
+                    <p class="field-help" id="email-ajuda">
+                        Use um endereço a qual você tenha acesso
+                    </p>
+                </div>
+
+                <div class="form-field">
+                    <label for="senha">Senha</label>
+                    <input id="senha" name="senha" type="password" autocomplete="new-password" minlength="8" required aria-describedby="senha-ajuda">
+                    <p id="senha-ajuda" class="field-help">
+                        Prefira uma senha longa que não use em outros sites.
+                    </p>
+                </div>
+
+                <div class="form-field">
+                    <label for="confirmar-senha">Confirmar senha</label>
+                    <input id="confirmar-senha" name="confirmar-senha" type="password" autocomplete="new-password" required aria-describedby="confirmar-senha-ajuda">
+                    <p class="field-help" id="confirmar-senha-ajuda">
+                        Digite novamente a mesma senha
+                    </p>
+                </div>
+
+                <button id="mostrar-senhas" type="button" aria-controls="senha confirmar-senha">
+                    Exibir senhas
+                </button>
+
+                <button class="button-primary" type="submit">Criar conta</button>
+                <p class="form-feedback" id="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p>
+                </button>
+            </form>
+
+            <p class="login-prompt">
+                Já tem cadastro? <a href="../index.login.html">Entre na sua conta</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>SENONG Music - projeto acadêmico de loja de discos e músicas.</p>
+        </div>
+    </footer>
+    <script src="script.cadastro.js" defer></script>
+</body>
+</html>
