@@ -16,8 +16,8 @@
             </a>
             <nav class="main-nav" aria-label="Navegação principal">
                 <ul>
-                    <li><a href="../pagina%20inicial/index.html">Discos & Músicas</a></li>
-                    <li><a href="../index.login.html">Página de login</a></li>  
+                    <li><a href="../header/pagina%20inicial/index.paginainicial.html">Discos & Músicas</a></li>
+                    <li><a href="../componentes/header/index.login.html">Página de login</a></li>  
                 </ul>
             </nav>
         </div>
@@ -38,8 +38,7 @@
         <section class="auth-card" aria-labelledby="titulo-formulario">
             <h2 id="titulo-formulario">Dados da sua conta</h2>
             <p id="instrucoes-formulario" class="form-intro">
-                Preencha os campos obrigatórios. Para gravar os dados em cadastro.json,
-                mantenha o servidor local de cadastro ligado.
+                Preencha os campos obrigatórios. Sua conta será salva neste navegador.
             </p>
 
             <form id="form-cadastro" method="post" aria-describedby="instrucoes-formulario">
@@ -49,6 +48,7 @@
                     <p class="field-help" id="nome-ajuda">
                         Digite seu nome como deseja identificar sua conta.
                     </p>
+                    <p class="field-error" id="nome-erro" role="alert"></p>
                 </div>
 
                 <div class="form-field">
@@ -57,6 +57,7 @@
                     <p class="field-help" id="email-ajuda">
                         Use um endereço a qual você tenha acesso
                     </p>
+                    <p class="field-error" id="email-erro" role="alert"></p>
                 </div>
 
                 <div class="form-field">
@@ -65,6 +66,7 @@
                     <p id="senha-ajuda" class="field-help">
                         Prefira uma senha longa que não use em outros sites.
                     </p>
+                    <p class="field-error" id="senha-erro" role="alert"></p>
                 </div>
 
                 <div class="form-field">
@@ -73,6 +75,7 @@
                     <p class="field-help" id="confirmar-senha-ajuda">
                         Digite novamente a mesma senha
                     </p>
+                    <p class="field-error" id="confirmar-senha-erro" role="alert"></p>
                 </div>
 
                 <button id="mostrar-senhas" type="button" aria-controls="senha confirmar-senha">
@@ -81,11 +84,10 @@
 
                 <button class="button-primary" type="submit">Criar conta</button>
                 <p class="form-feedback" id="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p>
-                </button>
             </form>
 
             <p class="login-prompt">
-                Já tem cadastro? <a href="../index.login.html">Entre na sua conta</a>
+                Já tem cadastro? <a href="../componentes/header/index.login.html">Entre na sua conta</a>
             </p>
         </section>
     </main>
