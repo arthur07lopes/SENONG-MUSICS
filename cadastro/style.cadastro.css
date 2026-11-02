@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..800&family=Space+Grotesk:wght@400..700&display=swap");
+
+:root {
+    color-scheme: dark;
+    --cor-fundo: #071a2f;
+    --cor-superficie: #102840;
+    --cor-superficie-clara: #173650;
+    --cor-texto: #edf5fb;
+    --cor-texto-suave: #b8cbdc;
+    --cor-borda: #2b4a65;
+    --cor-destaque: #48c9e8;
+    --cor-destaque-hover: #81def2;
+    --cor-foco: #f2cf75;
+    --cor-erro: #ff9292;
+    --cor-sucesso: #7ee0b5;
+    --raio-padrao: 1.25rem;
+    --sombra-cartao: 0 1.5rem 4rem rgb(0 0 0 / 28%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 0;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--cor-texto);
+    background:
+        radial-gradient(circle at 12% 18%, rgb(48 133 171 / 18%), transparent 30rem),
+        radial-gradient(circle at 88% 82%, rgb(49 93 145 / 20%), transparent 28rem),
+        var(--cor-fundo);
+    font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-destaque-hover);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--cor-texto);
+}
+
+:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    z-index: 10;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.75rem 1rem;
+    transform: translateY(-160%);
+    border-radius: 0.65rem;
+    color: #061725;
+    background: var(--cor-destaque-hover);
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.container {
+    width: min(100% - 2.5rem, 72rem);
+    margin-inline: auto;
+}
+
+.site-header {
+    border-bottom: 1px solid rgb(184 203 220 / 14%);
+    background: rgb(4 17 31 / 50%);
+}
+
+.head-inner {
+    display: flex;
+    min-height: 5.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    width: 3.4rem;
+    aspect-ratio: 274 / 224;
+    flex: 0 0 auto;
+    place-items: center;
+    background: url("./senong-logo.png") center / contain no-repeat;
+    font-size: 0;
+}
+
+.brand-name {
+    font-family: "Space Grotesk", "DM Sans", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: var(--cor-texto-suave);
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    border-color: rgb(72 201 232 / 42%);
+    color: var(--cor-texto);
+    background: rgb(72 201 232 / 10%);
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(19rem, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5.5rem);
+    padding-block: clamp(3rem, 8vw, 6.5rem);
+}
+
+.auth-intro {
+    max-width: 33rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.9rem;
+    color: var(--cor-destaque-hover);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.auth-intro h1 {
+    max-width: 11ch;
+    margin: 0;
+    font-family: "Space Grotesk", "DM Sans", sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    letter-spacing: -0.055em;
+    line-height: 1.05;
+}
+
+.intro-copy {
+    max-width: 36rem;
+    margin: 1.5rem 0 0;
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+}
+
+.benefits {
+    display: grid;
+    gap: 0.8rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    color: var(--cor-texto-suave);
+    list-style: none;
+}
+
+.benefits li {
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.benefits li::before {
+    position: absolute;
+    top: 0.12em;
+    left: 0;
+    color: var(--cor-destaque);
+    content: "♪";
+    font-weight: 800;
+}
+
+.auth-card {
+    padding: clamp(1.5rem, 4vw, 2.6rem);
+    border: 1px solid rgb(184 203 220 / 17%);
+    border-radius: var(--raio-padrao);
+    background: linear-gradient(155deg, rgb(23 54 80 / 96%), rgb(12 32 53 / 98%));
+    box-shadow: var(--sombra-cartao);
+}
+
+.auth-card h2 {
+    margin: 0;
+    font-family: "Space Grotesk", "DM Sans", sans-serif;
+    font-size: clamp(1.55rem, 3vw, 2.1rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.form-intro {
+    margin: 0.85rem 0 1.6rem;
+    color: var(--cor-texto-suave);
+    font-size: 0.93rem;
+}
+
+#form-cadastro {
+    display: grid;
+    gap: 1.15rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.form-field label {
+    color: var(--cor-texto);
+    font-size: 0.93rem;
+    font-weight: 700;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 3.15rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    color: var(--cor-texto);
+    background: #091d31;
+    font: inherit;
+}
+
+.form-field input:hover {
+    border-color: #4c7593;
+}
+
+.form-field input:focus-visible {
+    border-color: var(--cor-destaque);
+    outline: 3px solid rgb(72 201 232 / 28%);
+    outline-offset: 2px;
+}
+
+.form-field input[aria-invalid="true"] {
+    border-color: var(--cor-erro);
+}
+
+.field-help {
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+#mostrar-senhas,
+.button-primary {
+    min-height: 3.15rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+#mostrar-senhas {
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    background: rgb(9 29 49 / 65%);
+}
+
+#mostrar-senhas:hover {
+    border-color: var(--cor-destaque);
+    background: rgb(72 201 232 / 8%);
+}
+
+.button-primary {
+    border: 0;
+    color: #062131;
+    background: var(--cor-destaque);
+    font-weight: 800;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: var(--cor-destaque-hover);
+}
+
+.button-primary:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.form-feedback {
+    min-height: 1.5rem;
+    margin: 0;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+}
+
+.form-feedback[data-tipo="sucesso"] {
+    color: var(--cor-sucesso);
+}
+
+.form-feedback[data-tipo="erro"] {
+    color: var(--cor-erro);
+}
+
+.login-prompt {
+    margin: 1.5rem 0 0;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgb(184 203 220 / 14%);
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+}
+
+.site-footer {
+    padding-block: 1.5rem;
+    border-top: 1px solid rgb(184 203 220 / 14%);
+    color: var(--cor-texto-suave);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 52rem) {
+    .head-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.75rem;
+        padding-block: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 0.2rem;
+    }
+
+    .main-nav a {
+        padding-inline: 0.65rem;
+    }
+
+    .auth-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    .auth-intro h1 {
+        max-width: 15ch;
+    }
+}
+
+@media (max-width: 30rem) {
+    .container {
+        width: min(100% - 1.5rem, 72rem);
+    }
+
+    .auth-card {
+        padding: 1.2rem;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+@media (forced-colors: active) {
+    .form-field input[aria-invalid="true"] {
+        border: 2px solid Mark;
+    }
+
+    :focus-visible {
+        outline: 2px solid Highlight;
+    }
+}
