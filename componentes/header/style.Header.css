@@ -22,13 +22,14 @@ body {
     margin-left: auto;
 }
 
-a {
+.teste a {
     text-decoration: none;
-    color: inherit; 
-    cursor: pointer; 
+    color: inherit;
+    cursor: pointer;
 }
 
-img {
+/* só a logo do header, não afeta outras imagens da página */
+.teste img {
     width: 60px;
     height: auto;
 }
