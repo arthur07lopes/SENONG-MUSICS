@@ -30,7 +30,11 @@ function limparErros() {
     mensagem.textContent = "";
 }
  
+<<<<<<< HEAD
 formulario.addEventListener("submit", async (event) => {
+=======
+formulario.addEventListener("submit", (event) => {
+>>>>>>> origin/main
     event.preventDefault();
     limparErros();
  
@@ -65,6 +69,7 @@ formulario.addEventListener("submit", async (event) => {
         senha: senha.value,
     };
  
+<<<<<<< HEAD
     try {
         const resposta = await fetch("http://localhost:5500/users", {
             method: "POST",
@@ -82,3 +87,23 @@ formulario.addEventListener("submit", async (event) => {
         mensagem.textContent = "Erro: servidor indisponível. Verifique se o json-server está ligado.";
     }
 });
+=======
+    const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+    const emailJaCadastrado = usuarios.some(
+        (u) => u.email.toLowerCase() === usuario.email.toLowerCase()
+    );
+
+    if (emailJaCadastrado) {
+        mostrarErro(email, "Erro: já existe uma conta com este e-mail.");
+        mensagem.textContent = "Há 1 campo(s) para corrigir.";
+        email.focus();
+        return;
+    }
+
+    usuarios.push(usuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    formulario.reset();
+    mensagem.innerHTML = 'Conta criada com sucesso. <a href="../componentes/header/index.login.html">Ir para o login</a>';
+});
+>>>>>>> origin/main
