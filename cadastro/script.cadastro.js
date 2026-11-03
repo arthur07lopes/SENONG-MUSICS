@@ -30,11 +30,7 @@ function limparErros() {
     mensagem.textContent = "";
 }
  
-<<<<<<< HEAD
-formulario.addEventListener("submit", async (event) => {
-=======
 formulario.addEventListener("submit", (event) => {
->>>>>>> origin/main
     event.preventDefault();
     limparErros();
  
@@ -69,25 +65,6 @@ formulario.addEventListener("submit", (event) => {
         senha: senha.value,
     };
  
-<<<<<<< HEAD
-    try {
-        const resposta = await fetch("http://localhost:5500/users", {
-            method: "POST",
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            body: JSON.stringify(usuario),
-        });
- 
-        if (resposta.status === 201) {
-            formulario.reset();
-            mensagem.innerHTML = 'Conta criada com sucesso. <a href="../Login/index.Login.html">Ir para o login</a>';
-        } else {
-            mensagem.textContent = "Erro: não foi possível criar a conta. Tente de novo.";
-        }
-    } catch (erro) {
-        mensagem.textContent = "Erro: servidor indisponível. Verifique se o json-server está ligado.";
-    }
-});
-=======
     const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
     const emailJaCadastrado = usuarios.some(
         (u) => u.email.toLowerCase() === usuario.email.toLowerCase()
@@ -106,4 +83,3 @@ formulario.addEventListener("submit", (event) => {
     formulario.reset();
     mensagem.innerHTML = 'Conta criada com sucesso. <a href="../componentes/header/index.login.html">Ir para o login</a>';
 });
->>>>>>> origin/main
