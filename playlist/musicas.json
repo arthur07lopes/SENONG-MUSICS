@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "artista": "Red Hot Chili Peppers",
+        "nome": "Dark Necessities",
+        "duracao": "5:40",
+        "capa": "red_hot_chili_peppers.jpg"
+    },
+    {
+        "id": 2,
+        "artista": "Red Hot Chili Peppers",
+        "nome": "Californication",
+        "duracao": "5:21",
+        "capa": "red_hot_chili_peppers.jpg"
+    },
+    {
+        "id": 3,
+        "artista": "Red Hot Chili Peppers",
+        "nome": "Under the Bridge",
+        "duracao": "4:24",
+        "capa": "red_hot_chili_peppers.jpg"
+    },
+    {
+        "id": 4,
+        "artista": "Red Hot Chili Peppers",
+        "nome": "Can't Stop",
+        "duracao": "4:29",
+        "capa": "red_hot_chili_peppers.jpg"
+    }
+]

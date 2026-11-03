@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="style.Playlist.css">
+</head>
+<body>
+    <div class="topo">
+        <img class="playlist_cover" alt="capa" src="playlist img.jpg">
+        <div class="info">
+            <div class="titulo">
+                <h1>Playlist</h1>
+            </div>
+            <div class="detalhes">Vários Artistas - 2021</div>
+            <div class="contagem" id="contagem">0 músicas</div>
+            <button id="btn_abrir" class="btn_adicionar">+ Adicionar música</button>
+        </div>
+    </div>
+
+    <div id="lista_musicas"></div>
+
+    <!-- Aba de busca -->
+    <div id="modal" class="modal" hidden>
+        <div class="modal_caixa" role="dialog" aria-modal="true" aria-label="Adicionar música">
+            <div class="modal_topo">
+                <h2>Adicionar música</h2>
+                <button id="btn_fechar" class="btn_fechar" aria-label="Fechar">✕</button>
+            </div>
+            <input type="text" id="busca" placeholder="Buscar por música ou artista..." autocomplete="off">
+            <div id="resultados" class="resultados"></div>
+        </div>
+    </div>
+
+    <script src="script.Playlist.js"></script>
+</body>
+</html>
