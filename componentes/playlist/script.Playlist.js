@@ -1,5 +1,5 @@
-fetch('../componentes/playlist/index.playlist.html')
+fetch('../componentes/playlist/index.Playlist.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById('header-container').innerHTML = data;
+    document.getElementById('playlist-container').innerHTML = data;
   });
