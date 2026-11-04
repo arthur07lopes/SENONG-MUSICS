@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SENONG | Loja de Vinil</title>
+
+    <link rel="stylesheet" href="css/style.loja.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <h1 class="logo">SENONG<span>.</span></h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <button class="botao-carrinho" onclick="mostrarCarrinho()">
+            🛒 Carrinho
+            <span id="quantidade">0</span>
+        </button>
+
+    </header>
+
+    <main>
+
+        <section class="banner" id="inicio">
+
+            <h2>O som que atravessa gerações.</h2>
+
+            <p>Descubra sua próxima experiência musical.</p>
+
+        </section>
+
+        <section class="catalogo" id="catalogo">
+
+            <h2>Nosso catálogo</h2>
+
+            <div class="produtos" id="produtos">
+
+                <!-- Os produtos serão inseridos pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+        <section class="carrinho" id="carrinho">
+
+            <h2>🛒 Seu carrinho</h2>
+
+            <div id="itens-carrinho"></div>
+
+            <h3 id="total">Total: R$ 0,00</h3>
+
+            <button onclick="abrirCheckout()">
+                Finalizar compra
+            </button>
+
+        </section>
+
+        <section class="checkout" id="checkout">
+
+            <h2>Finalizar pedido</h2>
+
+            <form id="form-checkout">
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" required>
+
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" required>
+
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" required>
+
+                <label for="pagamento">Forma de pagamento</label>
+
+                <select id="pagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de crédito">Cartão de crédito</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
+
+                <button type="submit">
+                    Confirmar compra
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="confirmacao" id="confirmacao">
+
+            <h2>✅ Compra realizada!</h2>
+
+            <p id="mensagem-pedido"></p>
+
+            <button onclick="voltarLoja()">
+                Voltar à loja
+            </button>
+
+        </section>
+
+        <section class="sobre" id="sobre">
+
+            <h2>Sobre a SENONG</h2>
+
+            <p>Uma loja feita para quem ama música e coleciona momentos.</p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>SENONG © 2026 — Todos os direitos reservados.</p>
+
+    </footer>
+
+    <script src="js/script.loja.js"></script>
+
+</body>
+
+</html>
