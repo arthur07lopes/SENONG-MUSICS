@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.Playlist.css">
 </head>
 <body>
-    <div class="topo">
+    <div class="topo" id="topo">
         <img class="playlist_cover" alt="capa" src="playlist img.jpg">
         <div class="info">
             <div class="titulo">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div id="lista_musicas"></div>
+    <div id="lista_musicas" role="region" aria-label="Músicas da playlist"></div>
 
     <!-- Aba de busca -->
     <div id="modal" class="modal" hidden>
@@ -28,6 +28,15 @@
                 <h2>Adicionar música</h2>
                 <button id="btn_fechar" class="btn_fechar" aria-label="Fechar">✕</button>
             </div>
+            <form id="form_spotify" class="form_spotify" novalidate>
+                <label for="link_spotify">Link de compartilhamento do Spotify</label>
+                <div class="linha_form">
+                    <input type="url" id="link_spotify" placeholder="https://open.spotify.com/track/..." autocomplete="off" aria-describedby="status_modal">
+                    <button type="submit" class="btn_item">Adicionar link</button>
+                </div>
+            </form>
+            <p id="status_modal" class="status_modal" role="status" aria-live="polite"></p>
+            <label for="busca" class="rotulo_busca">Ou busque no catálogo</label>
             <input type="text" id="busca" placeholder="Buscar por música ou artista..." autocomplete="off">
             <div id="resultados" class="resultados"></div>
         </div>

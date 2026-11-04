@@ -215,7 +215,6 @@ body{
     color: white;
     padding: 10px 12px;
     font-size: 14px;
-    outline: none;
     margin-bottom: 14px;
 }
 
@@ -259,4 +258,78 @@ body{
 .resultado_textos .nome_musica,
 .resultado_textos .artista {
     padding: 2px 0;
+}
+
+/* ---------- Spotify ---------- */
+.musica_spotify {
+    width: calc(100% - 44px);
+    box-sizing: border-box;
+    margin: 0 auto 8px auto;
+    padding: 10px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.musica_spotify .player_spotify {
+    width: 100%;
+    height: 152px;
+    border: 0;
+    border-radius: 12px;
+}
+
+.musica_spotify .titulo_spotify {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn_remover {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--rosa);
+    border-radius: 6px;
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.btn_remover:hover {
+    border-color: var(--laranja);
+    color: var(--laranja);
+}
+
+.form_spotify label,
+.rotulo_busca {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.linha_form {
+    display: flex;
+    gap: 8px;
+}
+
+#link_spotify {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--fundo_item_hover);
+    border: 1px solid var(--rosa);
+    border-radius: 6px;
+    color: white;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.status_modal {
+    min-height: 1.2em;
+    margin: 8px 0 10px;
+    font-size: 14px;
+    color: #d9d9d9;
+}
+
+:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 2px;
 }
