@@ -8,6 +8,8 @@ const btnAbrir = document.getElementById("btn_abrir");
 const btnFechar = document.getElementById("btn_fechar");
 const busca = document.getElementById("busca");
 const resultados = document.getElementById("resultados");
+const statusModal = document.getElementById("status_modal");
+const topo = document.getElementById("topo");
 
 let catalogo = [];
 let idsPlaylist = [];
@@ -62,6 +64,20 @@ function criarLinha(musica) {
 
     info.append(principais, duracao);
     div.append(img, info);
+
+    if (musica.spotifyId) {
+        const titulo = musica.nome + " - " + musica.artista;
+        div.setAttribute("role", "group");
+        div.setAttribute("aria-label", titulo);
+
+        const iframe = document.createElement("iframe");
+        iframe.className = "player_spotify";
+        iframe.src = "https://open.spotify.com/embed/track/" + musica.spotifyId;
+        iframe.title = "Player do Spotify: " + titulo;
+        iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+        iframe.loading = "lazy";
+        div.appendChild(iframe);
+    }
     return div;
 }
 
@@ -71,7 +87,8 @@ function renderPlaylist() {
         .map((id) => catalogo.find((m) => m.id === id))
         .filter(Boolean);
 
-    if (musicas.length === 0) {
+    const total = musicas.length;
+    if (total === 0) {
         const vazio = document.createElement("div");
         vazio.className = "vazio";
         vazio.textContent = "Nenhuma música na playlist. Clique em “Adicionar música”.";
@@ -80,7 +97,7 @@ function renderPlaylist() {
         musicas.forEach((m) => lista.appendChild(criarLinha(m)));
     }
 
-contagem.textContent = musicas.length + (musicas.length === 1 ? " música" : " músicas");
+    contagem.textContent = total + (total === 1 ? " música" : " músicas");
 }
 
 /*Aba de busca*/
@@ -139,16 +156,29 @@ function adicionar(id) {
     salvar();
     renderPlaylist();
     renderResultados();
+    // O botão clicado foi recriado/desabilitado; devolve o foco ao diálogo.
+    statusModal.textContent = "Música adicionada à playlist.";
+    busca.focus();
 }
+
+let focoAnterior = null;
+
 function abrirModal() {
+    focoAnterior = document.activeElement;
     modal.hidden = false;
+    topo.inert = true;
+    lista.inert = true;
     busca.value = "";
+    statusModal.textContent = "";
     renderResultados();
     busca.focus();
 }
 
 function fecharModal() {
     modal.hidden = true;
+    topo.inert = false;
+    lista.inert = false;
+    (focoAnterior || btnAbrir).focus();
 }
 
 btnAbrir.addEventListener("click", abrirModal);
@@ -158,7 +188,20 @@ modal.addEventListener("click", (e) => {
     if (e.target === modal) fecharModal();
 });
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.hidden) fecharModal();
+    if (modal.hidden) return;
+    if (e.key === "Escape") fecharModal();
+    if (e.key === "Tab") {
+        const foco = [...modal.querySelectorAll("button, input")].filter((el) => !el.disabled);
+        const primeiro = foco[0];
+        const ultimo = foco[foco.length - 1];
+        if (e.shiftKey && document.activeElement === primeiro) {
+            e.preventDefault();
+            ultimo.focus();
+        } else if (!e.shiftKey && document.activeElement === ultimo) {
+            e.preventDefault();
+            primeiro.focus();
+        }
+    }
 });
 
 async function iniciar() {
