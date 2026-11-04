@@ -5,30 +5,31 @@ const produtos = [
         nome: "Ten",
         artista: "Pearl Jam",
         preco: 149.90,
-        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pearl Jam - Ten/Ten (capa).png"
+        imagem: "/FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pearl Jam - Ten/Ten (capa).png"
     },
     {
         id: 2,
-        nome: "Abbey Road",
-        artista: "The Beatles",
+        nome: "36 Chambers",
+        artista: "Wu-Tang Clan",
         preco: 129.90,
-        imagem: "https://placehold.co/300x300/35003d/ffffff?text=Abbey+Road"
+        imagem: "/FOTOS SENONG MUSICS/capas,discos, bandas e outros/Enter The Wu-Tang Clan (36 Chambers)/36 Chambers.png"
     },
     {
         id: 3,
         nome: "The Dark Side of the Moon",
         artista: "Pink Floyd",
         preco: 179.90,
-        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pink Floyd - Dark Side Of The Moon/Dark_Side_of_the_Moon (Capa).png"
+        imagem: "/FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pink Floyd - Dark Side Of The Moon/Dark_Side_of_the_Moon (Capa).png"
     },
     {
         id: 4,
         nome: "Revolver",
-        artista: "The Beattles",
+        artista: "The Beatles",
         preco: 139.90,
-        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/the beatles - revolver/Revolver (capa).png"
+        imagem: "/FOTOS SENONG MUSICS/capas,discos, bandas e outros/the beatles - revolver/Revolver (capa).png"
     }
 ];
+
 
 let carrinho = [];
 let numeroPedido = 1000;
