@@ -2,10 +2,10 @@
 const produtos = [
     {
         id: 1,
-        nome: "Thriller",
-        artista: "Michael Jackson",
+        nome: "Ten",
+        artista: "Pearl Jam",
         preco: 149.90,
-        imagem: "https://placehold.co/300x300/35003d/ffffff?text=Thriller"
+        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pearl Jam - Ten/Ten (capa).png"
     },
     {
         id: 2,
@@ -19,14 +19,14 @@ const produtos = [
         nome: "The Dark Side of the Moon",
         artista: "Pink Floyd",
         preco: 179.90,
-        imagem: "https://placehold.co/300x300/35003d/ffffff?text=Pink+Floyd"
+        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/Pink Floyd - Dark Side Of The Moon/Dark_Side_of_the_Moon (Capa).png"
     },
     {
         id: 4,
-        nome: "Nevermind",
-        artista: "Nirvana",
+        nome: "Revolver",
+        artista: "The Beattles",
         preco: 139.90,
-        imagem: "https://placehold.co/300x300/35003d/ffffff?text=Nevermind"
+        imagem: "FOTOS SENONG MUSICS/capas,discos, bandas e outros/the beatles - revolver/Revolver (capa).png"
     }
 ];
 
