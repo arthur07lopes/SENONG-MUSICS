@@ -6,14 +6,99 @@
     <meta name ="description" content="Página inicial da loja de discos Senong">
     <title>Página Inicial - Senong</title>
     <link rel="stylesheet" href="style.paginainicial.css">
-    <link rel="stylesheet" href="../componentes/header/style.Header.css">
-    <link rel="stylesheet" href="../componentes/playlist/style.Playlist.css">
 </head>
 <body>
-    <div id="header-container"></div>
-    <div id="playlist-container"></div>
+    <input type="checkbox" id="abrir_menu">
 
-    <script src="../componentes/header/script.Header.js"></script>
-    <script src="../componentes/playlist/script.Playlist.js"></script>
+    <header>
+        <div class="espaçamento">
+            <label for="abrir_menu" class="logo">
+                <img src="../cadastro/senong-logo.png" alt="Logo senong">
+            </label>
+
+            <nav>
+                <a href="../playlist/index.Playlist.html">minha playlist</a>
+                <a href="#">bombando no brasil</a>
+                <a href="#">bombando nos eua</a>
+                <a href="#">mais ouvidas</a>
+            </nav>
+            <div class="foto_conta">
+                <img src="../playlist/playlist img.jpg" alt="Foto da conta com a capa da playlist">
+            </div>
+        </div>
+    </header>
+
+
+
+    <aside class="menu_lateral">
+        <br>
+        <label for="abrir_menu" class="logo_lateral">
+            <img src="../cadastro/senong-logo.png" alt="Logo senong">
+        </label>
+
+        <ul>
+            <li><a href="../playlist/index.Playlist.html">minha playlist</a></li>
+            <li><a href="#">bombando no brasil</a></li>
+            <li><a href="#">bombando nos eua</a></li>
+            <li><a href="#">mais ouvidas</a></li>
+        </ul>
+    </aside>
+
+
+
+
+
+
+    <main>
+        <section class="fileira" id="playlist" aria-labelledby="titulo-fileira">
+            <div class="fileira_cabecalho">
+                <div>
+                    <p class="fileira_etiqueta">SENONG MUSIC</p>
+                    <h2 id="titulo-fileira">Faixas em destaque</h2>
+                </div>
+                <a class="link_playlist" href="../playlist/index.Playlist.html">Abrir playlist <span aria-hidden="true">&#8599;</span></a>
+            </div>
+
+            <div class="trilha" aria-label="Faixas da playlist">
+                <article class="card musica-card">
+                    <img src="../playlist/red_hot_chili_peppers.jpg" alt="Capa de Red Hot Chili Peppers">
+                    <div class="musica_info">
+                        <p class="musica_artista">Red Hot Chili Peppers</p>
+                        <h3>Dark Necessities</h3>
+                        <p class="musica_duracao">5:40</p>
+                        <a href="../playlist/index.Playlist.html">Ver playlist</a>
+                    </div>
+                </article>
+                <article class="card musica-card">
+                    <img src="../playlist/red_hot_chili_peppers.jpg" alt="Capa de Red Hot Chili Peppers">
+                    <div class="musica_info">
+                        <p class="musica_artista">Red Hot Chili Peppers</p>
+                        <h3>Californication</h3>
+                        <p class="musica_duracao">5:21</p>
+                        <a href="../playlist/index.Playlist.html">Ver playlist</a>
+                    </div>
+                </article>
+                <article class="card musica-card">
+                    <img src="../playlist/red_hot_chili_peppers.jpg" alt="Capa de Red Hot Chili Peppers">
+                    <div class="musica_info">
+                        <p class="musica_artista">Red Hot Chili Peppers</p>
+                        <h3>Under the Bridge</h3>
+                        <p class="musica_duracao">4:24</p>
+                        <a href="../playlist/index.Playlist.html">Ver playlist</a>
+                    </div>
+                </article>
+                <article class="card musica-card">
+                    <img src="../playlist/red_hot_chili_peppers.jpg" alt="Capa de Red Hot Chili Peppers">
+                    <div class="musica_info">
+                        <p class="musica_artista">Red Hot Chili Peppers</p>
+                        <h3>Can't Stop</h3>
+                        <p class="musica_duracao">4:29</p>
+                        <a href="../playlist/index.Playlist.html">Ver playlist</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>

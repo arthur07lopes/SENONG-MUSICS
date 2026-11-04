@@ -1,3 +1,269 @@
-body {
-    background-color: rgb(39, 39, 104);
+:root {
+    --cor_de_fundo: rgb(39, 39, 104);
+    --cor_painel: #202052;
+    --cor_texto: #fff;
+    --cor_acento: #f2a36f;
+    --cor_card: #18183f;
 }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--cor_de_fundo);
+    color: var(--cor_texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#abrir_menu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+header {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-sizing: border-box;
+    z-index: 100;
+    background-color: var(--cor_de_fundo);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.espaçamento {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+}
+
+.logo {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 83px;
+    height: auto;
+    display: block;
+    transition: width .2s ease;
+}
+
+.logo img:hover {
+    width: 100px;
+}
+
+.espaçamento nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.espaçamento nav a,
+.menu_lateral a {
+    color: var(--cor_texto);
+    text-decoration: none;
+}
+
+.espaçamento nav a {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.espaçamento nav a:hover,
+.menu_lateral a:hover {
+    color: #b7c8ff;
+}
+
+.foto_conta {
+    display: block;
+    margin-left: auto;
+}
+
+.foto_conta img {
+    display: block;
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo_lateral {
+    display: flex;
+    align-items: center;
+    height:80px;
+    cursor: pointer;
+}
+
+.logo_lateral img {
+    width: 95px;
+    height: auto;
+    display: block;
+}
+
+.menu_lateral {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 110;
+    box-sizing: border-box;
+    background-color: var(--cor_painel);
+    transition: transform .25s ease;
+}
+
+.menu_lateral {
+    left: 0;
+    width: 300px;
+    padding: 0 24px 24px;
+    transform: translateX(-100%);
+}
+
+.menu_lateral ul {
+    display: grid;
+    gap: 22px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_lateral a {
+    font-size: 17px;
+}
+
+#abrir_menu:checked ~ .menu_lateral {
+    transform: translateX(0);
+}
+
+
+.fileira{
+    padding: 44px 0 56px;
+}
+
+main {
+    padding-top: 110px;
+}
+
+.fileira_cabecalho {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 40px;
+}
+
+.fileira_etiqueta {
+    margin: 0 0 8px;
+    color: var(--cor_acento);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fileira h2 {
+    margin: 0;
+    color: var(--cor_texto);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.link_playlist {
+    color: var(--cor_texto);
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.link_playlist:hover {
+    color: var(--cor_acento);
+}
+
+.trilha{
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 26px 40px 24px;
+    scrollbar-color: rgba(255,255,255,.35) transparent;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+}
+
+.trilha::-webkit-scrollbar {
+    height: 7px;
+}
+
+.trilha::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.35);
+    border-radius: 999px;
+}
+
+.card {
+    flex: 0 0 210px;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--cor_card);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px;
+    scroll-snap-align: start;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor_acento);
+}
+
+.musica-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.musica_info {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 7px 10px;
+    padding: 14px;
+}
+
+.musica_artista,
+.musica_duracao {
+    margin: 0;
+    color: rgba(255,255,255,.68);
+    font-size: 12px;
+}
+
+.musica_artista {
+    grid-column: 1 / -1;
+}
+
+.musica_info h3 {
+    overflow: hidden;
+    margin: 0;
+    color: var(--cor_texto);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.musica_info a {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 5px;
+    color: var(--cor_acento);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.musica_info a:hover {
+    text-decoration: underline;
+}
+

@@ -40,7 +40,7 @@ body{
     font-size: 14px;
 }
 
-/* ---------- Lista de músicas ---------- */
+/*Lista de músicas*/
 .musica{
     height: 120px;
     width: calc(100% - 44px);
@@ -129,7 +129,7 @@ body{
     padding: 30px;
 }
 
-/* ---------- Botão adicionar ---------- */
+/*Botão adicionar*/
 .btn_adicionar, .btn_item {
     border: none;
     border-radius: 6px;
@@ -155,7 +155,7 @@ body{
     cursor: default;
 }
 
-/* ---------- Aba de busca (modal) ---------- */
+/*Aba de busca (modal)*/
 .modal {
     position: fixed;
     inset: 0;
